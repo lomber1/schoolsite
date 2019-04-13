@@ -18,10 +18,18 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 
-from .views import HomeView
+from .views import HomeView, ContactView
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path("", HomeView.as_view(), name="homepage"),
-] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+    path("kontakt/", ContactView.as_view(), name="contact"),
+]
 
+# Develompent settings
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+# Production settings
+if not settings.DEBUG:
+    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

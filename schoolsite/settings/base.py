@@ -58,7 +58,7 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            os.path.join(BASE_DIR, "templates"),
+            "/mnt/c/Users/tomek/Projects/Python/schoolsite/templates",
         ],
         'APP_DIRS': True,
         'OPTIONS': {
@@ -67,6 +67,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                "django.template.context_processors.static",
             ],
         },
     },
@@ -124,6 +125,9 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "static"),
-    "/var/www/static/"
+    "/mnt/c/Users/tomek/Projects/Python/schoolsite/static",
+    "/mnt/c/Users/tomek/Projects/Python/schoolsite/static/bootstrap",
 ]
+
+MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(__file__)), 'media')
+MEDIA_URL = '/media/'
