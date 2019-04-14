@@ -11,6 +11,7 @@ gunicorn = "*"
 django-heroku = "*"
 dj-database-url = "*"
 django-extensions = "*"
+django-precompressed = "*"
 
 [requires]
 python_version = "3.6"
