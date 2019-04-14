@@ -1,5 +1,6 @@
 settings/development.py
-
+.idea/
+.vscode/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
