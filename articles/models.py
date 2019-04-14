@@ -1,5 +1,5 @@
 from django.db import models
-from django.conf import settings
+from django.contrib.auth.models import User
 from django_extensions.db.fields import AutoSlugField
 
 
@@ -19,10 +19,7 @@ class Article(models.Model):
     )
     body = models.TextField(blank=True, null=False, verbose_name="Tekst")
     author = models.ForeignKey(
-        settings.AUTH_USER_MODEL,
-        on_delete=models.SET_NULL,
-        null=True,
-        verbose_name="Autor",
+        User, on_delete=models.SET_NULL, null=True, verbose_name="Autor"
     )
     publish_date = models.DateTimeField(auto_now_add=True, verbose_name="Data dodania")
     category = models.ForeignKey(

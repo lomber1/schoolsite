@@ -1,43 +1,40 @@
-<div role="banner">
-    <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #AAF23D;">
-        <a class="navbar-brand" href="{% url 'homepage' %}">ZKiW</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+<div role="banner" id="navigation-header">
+  <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #AAF23D;">
+    <a class="navbar-brand" href="{% url 'homepage' %}">ZKiW</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
 
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav mr-auto">
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'homepage' %}"> Strona główna <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
-                        Aktualności
-                    </a>
-                    <div class="dropdown-menu" aria-labelledby="navbarDropdown" role="menu">
-                        <a class="dropdown-item" href="#">Biblioteka</a>
-                        <a class="dropdown-item" href="#">Dowozy i odwozy</a>
-                        <a class="dropdown-item" href="#">Harcerstwo</a>
-                        <a class="dropdown-item" href="#">Komunikaty</a>
-                        <a class="dropdown-item" href="#">Konkursy</a>
-                        <a class="dropdown-item" href="#">Ogłoszenia</a>
-                        <a class="dropdown-item" href="#">SKO</a>
-                        <a class="dropdown-item" href="#">Sukcesy uczniów</a>
-                        <a class="dropdown-item" href="#">Szkolne koło "Caritas"</a>
-                        <a class="dropdown-item" href="#">Komunikaty MEN</a>
-                    </div>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="{% url 'contact' %}"> Kontakt <span
-                    class="sr-only">(current)</span></a>
-                </li>
-            </ul>
-            <form class="form-inline my-2 my-lg-0">
-                <input class="form-control mr-sm-2" type="search" placeholder="Szukaj..." aria-label="Search">
-                <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Szukaj</button>
-            </form>
-        </div>
-    </nav>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'homepage' %}"> Strona główna <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item dropdown active">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Aktualności
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown" role="menu">
+            <a class="dropdown-item" href="#">Biblioteka</a>
+            <a class="dropdown-item" href="#">Dowozy i odwozy</a>
+            <a class="dropdown-item" href="#">Harcerstwo</a>
+            <a class="dropdown-item" href="#">Komunikaty</a>
+            <a class="dropdown-item" href="#">Konkursy</a>
+            <a class="dropdown-item" href="#">Ogłoszenia</a>
+            <a class="dropdown-item" href="#">SKO</a>
+            <a class="dropdown-item" href="#">Sukcesy uczniów</a>
+            <a class="dropdown-item" href="#">Szkolne koło "Caritas"</a>
+            <a class="dropdown-item" href="#">Komunikaty MEN</a>
+          </div>
+        </li>
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'contact' %}"> Kontakt <span class="sr-only">(current)</span></a>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0">
+        <input class="form-control mr-sm-2" type="search" placeholder="Szukaj..." aria-label="Search">
+        <button class="btn btn-outline-dark my-2 my-sm-0" type="submit">Szukaj</button>
+      </form>
+    </div>
+  </nav>
 </div>
