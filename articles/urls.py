@@ -20,6 +20,4 @@ from .views import ArticleDetails
 
 app_name = "articles"
 
-urlpatterns = [
-    path("<slug:slug>/", ArticleDetails.as_view(), name="article_details"),
-]
+urlpatterns = [path("<slug:slug>/", ArticleDetails.as_view(), name="article_details")]

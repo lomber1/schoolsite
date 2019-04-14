@@ -1,6 +1,7 @@
 from django.contrib import admin
 
 from .models import Category, Article
+
 # Register your models here.
 
 
@@ -23,13 +24,9 @@ class ArticleAdmin(admin.ModelAdmin):
 
 
 class CategoryAdmin(admin.ModelAdmin):
-    list_display = ("title", )
+    list_display = ("title",)
 
-    fieldsets = (
-        ('Standard info', {
-            'fields': ("title", )
-        }),
-    )
+    fieldsets = (("Standard info", {"fields": ("title",)}),)
 
 
 admin.site.register(Article, ArticleAdmin)

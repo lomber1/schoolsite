@@ -21,9 +21,9 @@ from django.conf.urls.static import static
 from .views import HomeView, ContactView
 
 urlpatterns = [
-    path('admin/', admin.site.urls),
+    path("admin/", admin.site.urls),
     path("", HomeView.as_view(), name="homepage"),
-    path("wiadomosc/", include('articles.urls')),
+    path("wiadomosc/", include("articles.urls")),
     path("kontakt/", ContactView.as_view(), name="contact"),
 ]
 
