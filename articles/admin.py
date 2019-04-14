@@ -9,18 +9,12 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = (
         "title",
         "body",
-        "get_author",
+        "author",
         "publish_date",
         "category",
         "is_visible",
         "slug",
     )
-
-    def get_author(self, obj):
-        return obj.author
-
-    get_author.admin_order_field = "author"
-    get_author.short_description = "Autor"
 
 
 class CategoryAdmin(admin.ModelAdmin):
