@@ -1,2 +1,35 @@
-{% extends "base.html" %}
-PANEL ADMINISTRATORA
+{% extends "adminpanel/base.html" %}
+
+{% block content %}
+
+<!-- Welcome message -->
+<section class="hero is-info welcome is-small" id="welcome-message">
+    <div class="hero-body">
+        <div class="container">
+            <h1 class="title">Dzień dobry, </h1> <!-- TODO: Add administrator name to welcome message. -->
+        </div>
+    </div>
+</section>
+
+<!-- Info tiles -->
+<section class="info-tiles">
+    <div class="tile is-ancestor">
+        <!-- Users this week chart -->
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+                <canvas id="usersThisWeekChart"></canvas>
+                <p class="subtitle">Użytkownicy w tym tygodniu</p>
+            </article>
+        </div>
+
+        <!-- Users this month chart -->
+        <div class="tile is-parent">
+            <article class="tile is-child box">
+                <canvas id="usersThisMonthChart"></canvas>
+                <p class="subtitle">Użytkownicy w tym miesiącu</p>
+            </article>
+        </div>
+    </div>
+</section>
+
+{% endblock %}

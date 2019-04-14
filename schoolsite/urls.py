@@ -24,6 +24,7 @@ urlpatterns = [
     path("admin/", admin.site.urls),
     path("", HomeView.as_view(), name="homepage"),
     path("wiadomosc/", include("articles.urls")),
+    path("panel/", include("adminpanel.urls")),
     path("kontakt/", ContactView.as_view(), name="contact"),
     path("", include("pwa.urls")),
 ]

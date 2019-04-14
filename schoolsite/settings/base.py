@@ -36,7 +36,7 @@ PREREQUSITE_APPS = [
     "pwa",
 ]
 
-PROJECT_APPS = ["articles", "users"]
+PROJECT_APPS = ["articles", "users", "adminpanel"]
 
 INSTALLED_APPS = PREREQUSITE_APPS + PROJECT_APPS
 
