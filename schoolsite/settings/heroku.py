@@ -10,15 +10,11 @@ SECRET_KEY = os.environ.get("SECRET_KEY")
 
 ALLOWED_HOSTS = ["*.herokuapp.com"]
 
-DATABASES = {
-    "default": {
+DATABASES = {"default": {}}
 
-    }
-}
-
-DATABASES["default"] = dj_database_url.config(conn_max_age=600, 
-                                              ssl_require=True)
+DATABASES["default"] = dj_database_url.config(conn_max_age=600, ssl_require=True)
 
 django_heroku.settings(locals())
 
 STATIC_ROOT = ""
+SECURE_SSL_REDIRECT = True

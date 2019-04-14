@@ -10,6 +10,8 @@ django = "*"
 gunicorn = "*"
 django-heroku = "*"
 dj-database-url = "*"
+django-extensions = "*"
+django-pwa = "*"
 
 [requires]
 python_version = "3.6"

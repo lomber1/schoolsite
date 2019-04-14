@@ -1,0 +1,7 @@
+#navigation-header {
+    position: sticky;
+    position: -webkit-sticky;
+    top: 0px;
+    z-index: 1000;
+    margin-bottom: 10px;
+}
