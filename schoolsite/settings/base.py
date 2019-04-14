@@ -15,7 +15,6 @@ import sys
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-sys.path.insert(0, os.path.join(BASE_DIR, 'apps'))
 
 
 # Quick-start development settings - unsuitable for production
@@ -34,10 +33,11 @@ PREREQUSITE_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'django_extensions',
 ]
 
 PROJECT_APPS = [
-
+    "articles",
 ]
 
 INSTALLED_APPS = PREREQUSITE_APPS + PROJECT_APPS

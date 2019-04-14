@@ -2,35 +2,41 @@
 
 {% block content %}
 
-<div class="card mb-3">
-    <div class="row no-gutters">
+  {% for article in object_list %}
+    <div class="card mb-3">
+      <div class="row no-gutters">
         <!-- Left side with an image -->
         <div class="col-md-4">
-            <img src="https://cms-files.superszkolna.pl/sites/1029/wiadomosci/323265/fotos/w120x90/img_20190409_113525.jpg"
+          <img src="https://cms-files.superszkolna.pl/sites/1029/wiadomosci/323265/fotos/w120x90/img_20190409_113525.jpg"
                 class="card-img" alt="...">
         </div>
 
         <!-- Right side with text, date etc. -->
         <div class="col-md-8">
-            <div class="card-body">
-                <h5 class="card-title"><a href="#" style="color: #66cc33;"> EGZAMIN GIMNAZJALNY 2019 r. </a></h5>
-                <p class="card-text">
-                    10 kwietnia br. 54 uczniów klas trzecich gimnazjum rozpoczęło egzaminacyjny maraton. To ostatni
-                    rocznik, który po reformie przystępuje do egzaminów na tym etapie kształcenia. W pierwszym dniu
-                    młodzież zmagała się z historią,wiedzą o społeczeństwie i językiem polskim....
-                </p>
-                <span class="card-text">
-                    <small class="text-muted">
-                        10 kwietnia 2019 19:36 | 
-                        <a href="#"
-                            style="color: #66cc33;">
-                                Aktualności
-                        </a>
-                    </small>
-                </span>
-            </div>
+          <div class="card-body">
+
+            <h5 class="card-title">
+              <a href="wiadomosc/{{ article.slug }}" style="color: #66cc33;">
+                {{ article.title }}
+              </a>
+            </h5>
+
+            <p class="card-text"> {{ article.body }} <p> <!-- TODO: Short article body to x characters. -->
+
+            <span class="card-text">
+              <small class="text-muted">
+                {{ article.publish_date }} |
+                <a href="#" <!-- TODO: Add link to articles with same category. -->
+                  style="color: #66cc33;">
+                    {{ article.category }}
+                </a>
+              </small>
+            </span>
+
+          </div>
         </div>
+      </div>
     </div>
-</div>
+  {% endfor %}
 
 {% endblock %}
