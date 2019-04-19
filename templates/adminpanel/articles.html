@@ -3,16 +3,36 @@
 {% block content %}
 
 <div class="is-active" id="articles-tab">
-    <!-- Crate article btn -->
-    <section class="hero is-info is-small" id="create-article-btn">
-        <a href="{% url 'articles:article_create' %}">
-            <div class="hero-body">
-                <div class="container">
-                    <h1 class="title">Napisz wiadomość</h1> <!-- TODO: Add administrator name to welcome message. -->
-                </div>
-            </div>
-        </a>
+    <section class="columns">
+        <!-- Write article button -->
+        <div class="column is-5">
+            <section class="hero is-info is-bold is-small">
+                <a href="{% url 'articles:article_create' %}">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">Napisz wiadomość</h1>
+                        </div>
+                    </div>
+                </a>
+            </section>
+        </div>
+
+        <!-- Manage categories button -->
+        <div class="column is-7">
+            <section class="hero is-link is-bold is-small">
+                <a href="#">
+                    <div class="hero-body">
+                        <div class="container">
+                            <h1 class="title">Zarządzaj kategoriami</h1>
+                        </div>
+                    </div>
+                </a>
+            </section>
+        </div>
+
     </section>
+    
+    <br>
 
     <!-- Articles list -->
     <section id="list-of-all-articles">
