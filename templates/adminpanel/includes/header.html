@@ -5,5 +5,16 @@
         Panel administratora
       </a>
     </div>
+    <div class="navbar-menu">
+      <div class="navbar-end">
+        {% if user.is_authenticated %}
+          <div class="navbar-item">
+            <a href="{% url 'accounts:logout' %}" class="button is-danger is-rounded">
+              Wyloguj się
+            </a>
+          </div>
+        {% endif %}
+      </div>
+    </div>
   </div>
 </nav>

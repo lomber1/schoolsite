@@ -23,6 +23,7 @@ from .views import HomeView, ContactView
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("", HomeView.as_view(), name="homepage"),
+    path("accounts/", include("accounts.urls")),
     path("wiadomosci/", include("articles.urls")),
     path("kategorie/", include("categories.urls")),
     path("panel/", include("adminpanel.urls")),

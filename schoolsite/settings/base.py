@@ -37,7 +37,7 @@ PREREQUSITE_APPS = [
     "bulma",
 ]
 
-PROJECT_APPS = ["articles", "categories", "users", "adminpanel"]
+PROJECT_APPS = ["articles", "categories", "accounts", "adminpanel"]
 
 INSTALLED_APPS = PREREQUSITE_APPS + PROJECT_APPS
 
@@ -97,7 +97,9 @@ AUTH_PASSWORD_VALIDATORS = [
     {"NAME": "django.contrib.auth.password_validation.CommonPasswordValidator"},
     {"NAME": "django.contrib.auth.password_validation.NumericPasswordValidator"},
 ]
-AUTH_USER_MODEL = "users.User"
+AUTH_USER_MODEL = "accounts.User"
+LOGIN_REDIRECT_URL = "/panel/"
+LOGOUT_REDIRECT_URL = "/"
 
 # Internationalization
 # https://docs.djangoproject.com/en/2.2/topics/i18n/
