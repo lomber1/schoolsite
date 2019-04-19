@@ -2,6 +2,7 @@ settings/development.py
 .vscode/
 .idea/
 tree_result.html
+static/bulma
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
