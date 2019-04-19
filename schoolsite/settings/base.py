@@ -121,7 +121,6 @@ USE_TZ = True
 STATIC_URL = "/static/"
 STATICFILES_DIRS = [
     "/mnt/c/Users/tomek/Projects/Python/schoolsite/static",
-    # "/mnt/c/Users/tomek/Projects/Python/schoolsite/static/bootstrap",
 ]
 
 MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(__file__)), "media")

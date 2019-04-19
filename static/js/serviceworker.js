@@ -2,10 +2,6 @@
 
 var staticCacheName = "django-pwa-v" + new Date().getTime();
 var filesToCache = [
-    "/static/bootstrap/css/bootstrap.min.css",
-    "/static/bootstrap/css/bootstrap.css",
-    "/static/bootstrap/js/bootstrap.min.js",
-    "/static/bootstrap/js/bootstrap.js",
     "/static/jquery/js/jquery-3.4.0.min.js",
 ];
 
