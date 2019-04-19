@@ -40,6 +40,15 @@
                 </div>
 
                 <div class="media-right">
+                    <!-- Is visible icon -->
+                    <span class="icon has-text-link is-medium">
+                        {% if article.is_visible %}
+                            <i class="fas fa-eye fa-lg"></i>
+                        {% else %}
+                            <i class="fas fa-eye-slash fa-lg"></i>
+                        {% endif %}
+                    </span>
+
                     <!-- Edit button -->
                     <a href="{% url 'articles:article_update' slug=article.slug %}">
                         <span class="icon is-medium">

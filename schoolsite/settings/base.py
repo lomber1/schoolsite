@@ -34,6 +34,7 @@ PREREQUSITE_APPS = [
     "django.contrib.staticfiles",
     "django_extensions",
     "pwa",
+    "bulma",
 ]
 
 PROJECT_APPS = ["articles", "users", "adminpanel"]

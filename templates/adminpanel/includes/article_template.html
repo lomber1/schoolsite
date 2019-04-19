@@ -1,0 +1,15 @@
+{% load bulma_tags %}
+
+<form method="post">
+  {% csrf_token %}
+  {{ form|bulma }}
+
+  <div class="field is-grouped">
+    <div class="control">
+      <input class="button is-link" type="submit" value="Zatwiedź">
+    </div>
+    <div class="control">
+      <a href="{{ request.META.HTTP_REFERER }}" class="button is-danger">Anuluj</a>
+    </div>
+  </div>
+</form>
