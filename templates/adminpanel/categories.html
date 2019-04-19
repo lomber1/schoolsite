@@ -1,0 +1,78 @@
+{% extends 'adminpanel/base.html' %}
+
+{% block content %}
+
+<div class="categories-tab">
+  <!-- Top buttons section -->
+  <section class="columns">
+
+    <!-- Add category button -->
+    <div class="column is-5">
+      <section class="hero is-info is-bold is-small">
+        <a href="{% url 'categories:category_create' %}">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">Dodaj kategorię</h1>
+            </div>
+          </div>
+        </a>
+      </section>
+    </div>
+
+    <!-- Go back button -->
+    <div class="column is-7">
+      <section class="hero is-dark is-bold is-small">
+        <a href="{% url 'adminpanel:articles_tab' %}">
+          <div class="hero-body">
+            <div class="container">
+              <h1 class="title">Powrót do wiadomości</h1>
+            </div>
+          </div>
+        </a>
+      </section>
+    </div>
+  </section>
+
+  <!-- Articles list -->
+  <section id="list-of-all-categories">
+
+    <article class="school-articles-categories">
+      {% for category in object_list %}
+
+        <article class="media school-article-category">
+
+          <div class="media-content">
+            <div class="content">
+              <p>
+                <strong> {{ category.title }} </strong>
+              </p>
+            </div>
+          </div>
+
+          <div class="media-right">
+
+            <!-- Edit button -->
+            <a href="{% url 'categories:category_update' slug=category.slug %}">
+              <span class="icon is-medium">
+                <i class="fas fa-edit fa-lg"></i>
+              </span>
+            </a>
+
+            <!-- Delete button -->
+            <a href="{% url 'categories:category_delete' slug=category.slug %}">
+              <span class="icon is-medium has-text-danger">
+                <i class="fas fa-trash fa-lg"></i>
+              </span>
+            </a>
+
+          </div>
+
+        </article>
+
+      {% endfor %}
+    </article>
+
+  </section>
+</div>
+
+{% endblock content %}

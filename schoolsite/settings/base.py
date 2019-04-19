@@ -37,7 +37,7 @@ PREREQUSITE_APPS = [
     "bulma",
 ]
 
-PROJECT_APPS = ["articles", "users", "adminpanel"]
+PROJECT_APPS = ["articles", "categories", "users", "adminpanel"]
 
 INSTALLED_APPS = PREREQUSITE_APPS + PROJECT_APPS
 

@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<div class="is-active" id="articles-tab">
+<div id="articles-tab">
     <section class="columns">
         <!-- Write article button -->
         <div class="column is-5">
@@ -20,7 +20,7 @@
         <!-- Manage categories button -->
         <div class="column is-7">
             <section class="hero is-link is-bold is-small">
-                <a href="#">
+                <a href="{% url 'adminpanel:categories_tab' %}">
                     <div class="hero-body">
                         <div class="container">
                             <h1 class="title">Zarządzaj kategoriami</h1>
