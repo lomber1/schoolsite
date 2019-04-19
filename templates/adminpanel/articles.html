@@ -3,7 +3,65 @@
 {% block content %}
 
 <div class="is-active" id="articles-tab">
-    
+    <!-- Crate article btn -->
+    <section class="hero is-info is-small" id="create-article-btn">
+        <a href="{% url 'articles:article_create' %}">
+            <div class="hero-body">
+                <div class="container">
+                    <h1 class="title">Napisz wiadomość</h1> <!-- TODO: Add administrator name to welcome message. -->
+                </div>
+            </div>
+        </a>
+    </section>
+
+    <!-- Articles list -->
+    <section id="list-of-all-articles">
+
+        <article class="school-articles">
+            {% for article in object_list %}
+
+            <article class="media school-article">
+                
+                <figure class="media-left">
+                    <p class="image is-64-64">
+                        <img
+                            src="https://cms-files.superszkolna.pl/sites/1029/wiadomosci/323265/fotos/w120x90/img_20190409_113525.jpg">
+                    </p>
+                </figure>
+
+                <div class="media-content">
+                    <div class="content">
+                        <p>
+                            <strong> {{ article.title }} </strong> <small> {{ article.publish_date }} </small>
+                            <br>
+                            {{ article.get_short_body }}
+                        </p>
+                    </div>
+                </div>
+
+                <div class="media-right">
+                    <!-- Edit button -->
+                    <a href="{% url 'articles:article_update' slug=article.slug %}">
+                        <span class="icon is-medium">
+                            <i class="fas fa-edit fa-lg"></i>
+                        </span>
+                    </a>
+
+                    <!-- Delete button -->
+                    <a href="{% url 'articles:article_delete' slug=article.slug %}">
+                        <span class="icon is-medium has-text-danger">
+                            <i class="fas fa-trash fa-lg"></i>
+                        </span>
+                    </a>
+                    
+                </div>
+
+            </article>
+            
+            {% endfor %}            
+        </article>
+
+    </section>
 </div>
 
 {% endblock %}
