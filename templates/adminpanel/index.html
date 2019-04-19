@@ -1,35 +1,40 @@
 {% extends "adminpanel/base.html" %}
+{% load static %}
 
 {% block content %}
 
-<!-- Welcome message -->
-<section class="hero is-info welcome is-small" id="welcome-message">
-    <div class="hero-body">
-        <div class="container">
-            <h1 class="title">Dzień dobry, </h1> <!-- TODO: Add administrator name to welcome message. -->
+<div class="is-active" id="overview-tab">
+    <!-- Welcome message -->
+    <section class="hero is-info welcome is-small" id="welcome-message">
+        <div class="hero-body">
+            <div class="container">
+                <h1 class="title">Dzień dobry, </h1> <!-- TODO: Add administrator name to welcome message. -->
+            </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Info tiles -->
-<section class="info-tiles">
-    <div class="tile is-ancestor">
-        <!-- Users this week chart -->
-        <div class="tile is-parent">
-            <article class="tile is-child box">
-                <canvas id="usersThisWeekChart"></canvas>
-                <p class="subtitle">Użytkownicy w tym tygodniu</p>
-            </article>
+    <!-- Info tiles -->
+    <section class="info-tiles">
+        <div class="tile is-ancestor">
+            <!-- Users this week chart -->
+            <div class="tile is-parent">
+                <article class="tile is-child box">
+                    <canvas id="usersThisWeekChart"></canvas>
+                    <p class="subtitle">Użytkownicy w tym tygodniu</p>
+                </article>
+            </div>
+
+            <!-- Users this month chart -->
+            <div class="tile is-parent">
+                <article class="tile is-child box">
+                    <canvas id="usersThisMonthChart"></canvas>
+                    <p class="subtitle">Użytkownicy w tym miesiącu</p>
+                </article>
+            </div>
         </div>
-
-        <!-- Users this month chart -->
-        <div class="tile is-parent">
-            <article class="tile is-child box">
-                <canvas id="usersThisMonthChart"></canvas>
-                <p class="subtitle">Użytkownicy w tym miesiącu</p>
-            </article>
-        </div>
-    </div>
-</section>
-
+    </section>
+</div>
+<script src="{% static 'jquery/js/jquery-3.4.0.min.js' %}"></script>
+<script src="{% static 'js/chart/Chart.min.js' %}"></script>
+<script src="{% static 'js/chart/usersCharts.js' %}"></script>
 {% endblock %}

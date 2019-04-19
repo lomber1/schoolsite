@@ -1,12 +1,18 @@
-<aside class="menu is-hidden-mobile">
+<aside class="sidebar menu is-hidden-mobile">
+    {% url 'adminpanel:overview_tab' as overview_tab %}
+    {% url 'adminpanel:articles_tab' as articles_tab %}
+    {% url 'adminpanel:logs_tab' as logs_tab %}
+    {% url 'adminpanel:settings_tab' as settings_tab %}
+
     <p class="menu-label">
         Zakładki
     </p>
 
     <ul class="menu-list">
-        <li><a href="#" class="is-active">Przegląd</a></li>
-        <li><a href="#">Artykuły</a></li>
-        <li><a href="#">Raport</a></li>
-        <li><a href="#">Ustawienia</a></li>
+        <li><a href="{{ overview_tab }}" {% if request.path == overview_tab %} class="tab-button is-active" {% endif %} id="overview-button">Przegląd</a></li>
+        <li><a href="{{ articles_tab }}" {% if request.path == articles_tab %} class="tab-button is-active" {% endif %} id="articles-button">Wiadomości</a></li>
+        <li><a href="{{ logs_tab }}"     {% if request.path == logs_tab %}     class="tab-button is-active" {% endif %} id="logs-button">Raport</a></li>
+        <li><a href="{{ settings_tab }}" {% if request.path == settings_tab %} class="tab-button is-active" {% endif %} id="settins-button">Ustawienia</a></li>
     </ul>
+
 </aside>

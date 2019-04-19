@@ -19,16 +19,14 @@
       <div class="card-body">
 
         <h5 class="card-title">
-          <a href="wiadomosc/{{ article.slug }}" style="color: #66cc33;">
+          <a href="{% url 'articles:article_details' slug=article.slug %}" style="color: #66cc33;">
             {{ article.title }}
           </a>
         </h5>
 
         <p class="card-text"> {{ article.get_short_body }}...
-          <a href="wiadomosc/{{ article.slug }}" style="color: #66cc33;"> CZYTAJ DALEJ </a>
+          <a href="{% url 'articles:article_details' slug=article.slug %}" style="color: #66cc33;"> CZYTAJ DALEJ </a>
           <p>
-            <!-- TODO: Short article body to x characters. -->
-
             <span class="card-text">
               <small class="text-muted">
                 {{ article.publish_date }} |

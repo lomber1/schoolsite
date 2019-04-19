@@ -1,9 +1,8 @@
 var lineChartWeek = $("#usersThisWeekChart");
 var lineChartMonth = $("#usersThisMonthChart");
 
-// var colors = [, '#28a745', '#057bff', 'hsl(211, 100% , 85% )', '#dc3545', '#6c757d'];
 var colors = {
-    backgroundColor: "hsl(211, 100%, 85%)",
+    backgroundColor: "#B3D7FF",
     borderColor: '#007bff',
     pointBackgroundColor: "#007bff"
 }
