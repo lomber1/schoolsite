@@ -35,12 +35,12 @@
     <br>
 
     <!-- Articles list -->
-    <section id="list-of-all-articles">
+    <section id="list-of-all-articles-admin">
 
-        <article class="school-articles">
+        <article class="school-articles-admin">
             {% for article in object_list %}
 
-            <article class="media school-article">
+            <article class="media school-article-admin">
                 
                 <figure class="media-left">
                     <p class="image is-64-64">
@@ -54,7 +54,7 @@
                         <p>
                             <strong> {{ article.title }} </strong> <small> {{ article.publish_date }} </small>
                             <br>
-                            {{ article.get_short_body }}
+                            {{ article.get_short_body }}...
                         </p>
                     </div>
                 </div>

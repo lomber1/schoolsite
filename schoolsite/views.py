@@ -4,7 +4,7 @@ from django.views.decorators.gzip import gzip_page
 from django.utils.decorators import method_decorator
 
 
-@method_decorator(gzip_page, name="dispatch")
+# @method_decorator(gzip_page, name="dispatch")
 class HomeView(ListView):
     template_name = "home.html"
     model = Article

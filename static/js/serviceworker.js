@@ -3,6 +3,7 @@
 var staticCacheName = "django-pwa-v" + new Date().getTime();
 var filesToCache = [
     "/static/jquery/js/jquery-3.4.0.min.js",
+    "/static/bulma/css/style.min.css"
 ];
 
 // Cache on install
