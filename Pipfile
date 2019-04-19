@@ -12,6 +12,7 @@ django-heroku = "*"
 dj-database-url = "*"
 django-extensions = "*"
 django-pwa = "*"
+django-bulma = "*"
 
 [requires]
 python_version = "3.6"

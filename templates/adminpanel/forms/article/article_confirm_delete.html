@@ -1,0 +1,20 @@
+{% extends 'adminpanel/base.html' %}
+
+{% block content %}
+
+<form method="post">
+    {% csrf_token %}
+    <div class="field">
+        <h1>Czy jesteś pewien, że chcesz usunąć "{{ object }}"?</h1>
+    </div>
+    <div class="field is-grouped">
+        <div class="control">
+            <a href="{{ request.META.HTTP_REFERER }}" class="button is-link">Anuluj</a>
+        </div>
+        <div class="control">
+            <input class="button is-danger" type="submit" value="Usuń">
+        </div>
+    </div>
+</form>
+
+{% endblock content %}

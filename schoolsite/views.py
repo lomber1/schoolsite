@@ -10,11 +10,9 @@ class HomeView(ListView):
     model = Article
     paginate_by = 100
 
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
-        return context
-
+    def get_queryset(self):
+        return self.model.objects.filter(is_visible=True).order_by("-publish_date")
+    
 
 @method_decorator(gzip_page, name="dispatch")
 class ContactView(TemplateView):

@@ -1,0 +1,20 @@
+{% extends 'adminpanel/base.html' %}
+{% load bulma_tags %}
+
+{% block content %}
+
+<form method="post">
+  {% csrf_token %}
+  {{ form|bulma }}
+
+  <div class="field is-grouped">
+    <div class="control">
+      <input class="button is-link" type="submit" value="Zaloguj się">
+    </div>
+    <div class="control">
+      <a href="{% url 'homepage' %}" class="button is-danger">Anuluj</a>
+    </div>
+  </div>
+</form>
+
+{% endblock content %}
