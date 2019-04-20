@@ -18,7 +18,7 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from .views import HomeView, ContactView
+from .views import HomeView, ContactView, LessonTableView
 from .views import view_404, view_403, view_401
 
 urlpatterns = [
@@ -28,6 +28,7 @@ urlpatterns = [
     path("wiadomosci/", include("articles.urls")),
     path("kategorie/", include("categories.urls")),
     path("panel/", include("adminpanel.urls")),
+    path("plan_lekcji/", LessonTableView.as_view(), name="lesson_table"),
     path("kontakt/", ContactView.as_view(), name="contact"),
     path("", include("pwa.urls")),
     path("404/", view_404),

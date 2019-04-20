@@ -11,6 +11,7 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   {% block meta_description %}{% endblock %}
   <link rel="stylesheet" href="{% static 'bulma/css/style.min.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/website.css' %}">
   <title>{% block title %}Zespół Kształcenia i Wychowania im. Jana Pawła II w Starej Kiszewie{% endblock %}</title>
 </head>
@@ -24,12 +25,12 @@
     <section class="section">
       <div class="container">
         <div class="columns">
-          <div class="column is-3">
+            <div class="column is-2">
 
-          </div>
-          <div class="column is-9">
-            {% block content %} {% endblock %}
-          </div>
+            </div>
+            <div class="column is-8 is-offset-0">
+              {% block content %} {% endblock %}
+            </div>
         </div>
       </div>
     </section>

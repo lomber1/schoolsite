@@ -17,6 +17,11 @@ class HomeView(ListView):
 
 
 @method_decorator(gzip_page, name="dispatch")
+class LessonTableView(TemplateView):
+    template_name = "lesson_table.html"
+
+
+@method_decorator(gzip_page, name="dispatch")
 class ContactView(TemplateView):
     template_name = "contact.html"
 
