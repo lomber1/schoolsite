@@ -35,8 +35,11 @@
               </small>
 
               <br>
+              
+              <span style="word-break:break-all;">
+                {{ article.get_short_body }}...
+              </span>
 
-              {{ article.get_short_body }}... 
               <small>
                 <strong>
                   <a href="{% url 'articles:article_details' slug=article.slug %}"

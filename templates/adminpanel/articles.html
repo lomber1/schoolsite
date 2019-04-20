@@ -54,7 +54,9 @@
                         <p>
                             <strong> {{ article.title }} </strong> <small> {{ article.publish_date }} </small>
                             <br>
-                            {{ article.get_short_body }}...
+                            <span style="word-break:break-all;">
+                                {{ article.get_short_body }}...
+                            </span>
                         </p>
                     </div>
                 </div>
