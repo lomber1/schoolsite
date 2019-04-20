@@ -20,15 +20,21 @@ body {
 }
 
 #welcome-message {
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
 }
 
-.school-article-admin .media-right {
-    flex-direction: column;
+#error-code {
+    font-size: 12em;
 }
 
-@media only screen and (max-width: 700px) {
-    .school-article-admin .media-right {
-        flex-direction: column-reverse;
+@media only screen and (max-width: 768px) {
+    #error-code {
+        font-size: 10em;
+    }
+}
+
+@media only screen and (max-width: 320px) {
+    #error-code {
+        font-size: 8em;
     }
 }

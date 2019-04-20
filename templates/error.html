@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block error %}
+<section class="hero is-success is-bold is-fullheight-with-navbar">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title" id="error-code">
+        {{ code }}
+      </h1>
+      <h1 class="title" id="error-message">
+        {{ message }}
+      </h1>
+    </div>
+  </div>
+</section>
+{% endblock %}

@@ -13,12 +13,13 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
-from django.contrib import admin
-from django.urls import path, include
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib import admin
+from django.urls import path, include
 
 from .views import HomeView, ContactView
+from .views import view_404, view_403, view_401
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -29,9 +30,16 @@ urlpatterns = [
     path("panel/", include("adminpanel.urls")),
     path("kontakt/", ContactView.as_view(), name="contact"),
     path("", include("pwa.urls")),
+    path("404/", view_404),
+    path("403/", view_403),
+    path("401/", view_401),
 ]
 
-# Develompent settings
+handler404 = view_404
+handler403 = view_403
+handler401 = view_401
+
+# Development settings
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
