@@ -4,6 +4,7 @@ from django_extensions.db.fields import AutoSlugField
 
 from categories.models import Category
 
+
 # Create your models here.
 class Article(models.Model):
     title = models.CharField(
@@ -17,6 +18,7 @@ class Article(models.Model):
     )
     is_visible = models.BooleanField(default=True, verbose_name="Czy widoczny?")
     slug = AutoSlugField(populate_from=["title"], verbose_name="Uproszczona nazwa")
+    views = models.IntegerField(default=0, verbose_name="Wyświetlenia")
 
     def get_short_body(self):
         return self.body[:250]
