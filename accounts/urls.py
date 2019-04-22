@@ -1,16 +1,8 @@
-from django.urls import path
-from django.urls import reverse_lazy
-from django.contrib.auth.views import(
+from django.contrib.auth.views import (
     LoginView,
-    LogoutView,
-    PasswordResetView,
-    PasswordResetDoneView,
-    PasswordChangeView,
-    PasswordChangeDoneView,
-    PasswordResetConfirmView,
-    PasswordResetCompleteView
+    LogoutView
 )
-
+from django.urls import path
 
 app_name = "accounts"
 

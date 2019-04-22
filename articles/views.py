@@ -1,10 +1,10 @@
-from django.shortcuts import render
 from django.views.generic import *
 from django.views.generic.edit import *
 from django.urls import reverse_lazy
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from .models import Article
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class ArticleDetails(DetailView):
@@ -16,22 +16,25 @@ class ArticleDetails(DetailView):
 
         return context
 
-@method_decorator(login_required, name="dispatch")
-class ArticleCreate(CreateView):
+
+class ArticleCreate(LoginRequiredMixin, CreateView):
     template_name = "adminpanel/forms/article/article_form.html"
     model = Article
     fields = "__all__"
     success_url = reverse_lazy("adminpanel:articles_tab")
+    raise_exception = True
 
-@method_decorator(login_required, name="dispatch")
-class ArticleUpdate(UpdateView):
+
+class ArticleUpdate(LoginRequiredMixin, UpdateView):
     template_name = "adminpanel/forms/article/article_update_form.html"
     model = Article
     fields = "__all__"
     success_url = reverse_lazy("adminpanel:articles_tab")
+    raise_exception = True
 
-@method_decorator(login_required, name="dispatch")
-class ArticleDelete(DeleteView):
+
+class ArticleDelete(LoginRequiredMixin, DeleteView):
     template_name = "adminpanel/forms/article/article_confirm_delete.html"
     model = Article
     success_url = reverse_lazy("adminpanel:articles_tab")
+    raise_exception = True

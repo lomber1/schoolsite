@@ -10,20 +10,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   {% block meta_description %}{% endblock %}
+  <link rel="stylesheet" href="{% static 'bulma/css/style.min.css' %}">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
   <link rel="stylesheet" href="{% static 'css/website.css' %}">
   <title>{% block title %}Zespół Kształcenia i Wychowania im. Jana Pawła II w Starej Kiszewie{% endblock %}</title>
 </head>
 
-<body>
+<body class="has-navbar-fixed-top">
   {% include "includes/header.html" %}
 
-  <div class="container-fluid">
-    {% block content %} {% endblock %}
-  </div>
+  {% if code %}
+    {% block error %}{% endblock %}
+  {% else %}
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+            <div class="column is-2">
+
+            </div>
+            <div class="column is-8 is-offset-0">
+              {% block content %} {% endblock %}
+            </div>
+        </div>
+      </div>
+    </section>
+  {% endif %}
 
   {% include "includes/footer.html" %}
 
   <script src="{% static 'jquery/js/jquery-3.4.0.min.js' %}"></script>
+  <script src="{% static 'js/navbar.js' %}"></script>
 </body>
 
 </html>

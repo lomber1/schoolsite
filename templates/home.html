@@ -1,45 +1,56 @@
-{% extends "base.html" %}
+{% extends 'base.html' %}
 
-{% block meta_description %}
-<meta name="description" content="Strona internetowa Zespołu Kształcenia i Wychowania w Starej Kiszewie im. Jana Pawła II." />
-{% endblock %}
 
 {% block content %}
 
-{% for article in object_list %}
-<div class="card mb-3">
-  <div class="row no-gutters">
-    <!-- Left side with an image -->
-    <div class="col-md-4">
-      <img src="https://cms-files.superszkolna.pl/sites/1029/wiadomosci/323265/fotos/w120x90/img_20190409_113525.jpg" class="card-img" alt="...">
-    </div>
+<section id="list-of-all-articles">
+  <article class="school-articles">
+    {% for article in object_list %}
 
-    <!-- Right side with text, date etc. -->
-    <div class="col-md-8">
-      
-      <div class="card-body">
+      <article class="media school-article">
+        <!-- Thumbnail -->
+        <figure class="media-left">
+          <p class="image is-96x96">
+            <img src="https://cms-files.superszkolna.pl/sites/1029/wiadomosci/323791/fotos/img20190415wa0004.jpg">
+          </p>
+        </figure>
 
-        <h5 class="card-title">
-          <a href="{% url 'articles:article_details' slug=article.slug %}" style="color: #66cc33;">
-            {{ article.title }}
-          </a>
-        </h5>
+        <!-- Body -->
+        <div class="media-content">
+          <div class="content">
+            <p>
 
-        <p class="card-text"> {{ article.get_short_body }}...
-          <a href="{% url 'articles:article_details' slug=article.slug %}" style="color: #66cc33;"> CZYTAJ DALEJ </a>
-          <p>
-            <span class="card-text">
-              <small class="text-muted">
-                {{ article.publish_date }} |
-                <!-- TODO: Add link to articles with same category. -->
-                <a href="#" style="color: #66cc33;"> {{ article.category }} </a>
+              <strong>
+                <a href="{% url 'articles:article_details' slug=article.slug %}" 
+                    class="has-text-success">
+                  {{ article.title }}
+                </a>
+              </strong>
+              <small>
+                | {{ article.publish_date }} | {{ article.category }}
               </small>
-            </span>
-      </div>
 
-    </div>
-  </div>
-</div>
-{% endfor %}
+              <br>
+              
+              <span style="word-break:break-all;">
+                {{ article.get_short_body }}...
+              </span>
 
-{% endblock %}
+              <small>
+                <strong>
+                  <a href="{% url 'articles:article_details' slug=article.slug %}"
+                      class="has-text-success">
+                    CZYTAJ DALEJ
+                  </a>
+                </strong>
+              </small>
+            </p>
+          </div>
+        </div>
+      </article>
+
+    {% endfor %}
+  </article>
+</section>
+
+{% endblock content %}

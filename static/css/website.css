@@ -1,17 +1,6 @@
 * {
-    font-family: BlinkMacSystemFont,
-        -apple-system,
-        "Segoe UI",
-        Roboto,
-        Oxygen,
-        Ubuntu,
-        Cantarell,
-        "Fira Sans",
-        "Droid Sans",
-        "Helvetica Neue",
-        Helvetica,
-        Arial,
-        sans-serif;
+    font-family: 'Open Sans',
+    sans-serif;
 }
 
 body {
@@ -19,47 +8,30 @@ body {
     height: 100%;
 }
 
-#navigation-header {
-    position: sticky;
-    position: -webkit-sticky;
-    top: 0px;
-    z-index: 1000;
-    margin-bottom: 1rem;
-}
-
-.navbar {
-    margin-bottom: 1rem;
-}
-
 #welcome-message {
-    margin-bottom: 1rem;
+    margin-bottom: 1em;
 }
 
-.slideout-menu {
-    position: fixed;
-    left: 0;
-    top: 0;
-    bottom: 0;
-    right: 0;
-    z-index: 0;
-    width: 256px;
-    overflow-y: scroll;
-    -webkit-overflow-scrolling: touch;
-    display: none;
+#error-code {
+    font-size: 12em;
 }
 
-.slideout-panel {
-    position: relative;
-    z-index: 1;
-    will-change: transform;
+@media only screen and (max-width: 768px) {
+    #error-code {
+        font-size: 10em;
+    }
+
+    .article-title {
+        font-size: 1.5em;
+    }
 }
 
-.slideout-open,
-.slideout-open body,
-.slideout-open .slideout-panel {
-    overflow: hidden;
-}
+@media only screen and (max-width: 320px) {
+    #error-code {
+        font-size: 8em;
+    }
 
-.slideout-open .slideout-menu {
-    display: block;
+    .article-title {
+        font-size: 1.2em;
+    }
 }
