@@ -13,6 +13,7 @@ dj-database-url = "*"
 django-extensions = "*"
 django-pwa = "*"
 django-bulma = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.6"

@@ -123,7 +123,7 @@ STATICFILES_DIRS = [
     "/mnt/c/Users/tomek/Projects/Python/schoolsite/static",
 ]
 
-MEDIA_ROOT = os.path.join(os.path.dirname(os.path.dirname(__file__)), "media")
+MEDIA_ROOT = "/mnt/c/Users/tomek/Projects/Python/schoolsite/media/"
 MEDIA_URL = "/media/"
 
 # Progressive web app
