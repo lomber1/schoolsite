@@ -3,6 +3,8 @@ settings/development.py
 .idea/
 tree_result.html
 static/bulma/sass
+Articles.obj
+save_to_db.py
 
 # Byte-compiled / optimized / DLL files
 __pycache__/

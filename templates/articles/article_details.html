@@ -13,11 +13,8 @@
     </div>
     <div class="content article-body">
       <p class="break-word">
-        {{ object.body }}
+        {{ object.body | safe }}
       </p>
-      <h5 class="has-text-right">
-        - {{ object.author }}
-      </h5>
       <div class="level">
         <p class="level-left">
           <small>
