@@ -1,15 +1,21 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
+from django.db.models import F
+from django.urls import reverse_lazy
 from django.views.generic import *
 from django.views.generic.edit import *
-from django.urls import reverse_lazy
-from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
+
 from .models import Article
-from django.contrib.auth.mixins import LoginRequiredMixin
 
 
 class ArticleDetails(DetailView):
     model = Article
     template_name = "articles/article_details.html"
+
+    def get_queryset(self):
+        article = self.model.objects.filter(slug=self.kwargs["slug"])
+        article.update(views=F("views") + 1)
+
+        return article
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)

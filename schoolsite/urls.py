@@ -34,7 +34,7 @@ urlpatterns = [
     path("404/", view_404),
     path("403/", view_403),
     path("401/", view_401),
-]
+] + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
 
 handler404 = view_404
 handler403 = view_403
@@ -43,7 +43,3 @@ handler401 = view_401
 # Development settings
 if settings.DEBUG:
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
-
-# Production settings
-if not settings.DEBUG:
-    urlpatterns += static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)

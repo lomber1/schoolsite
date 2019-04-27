@@ -3,6 +3,12 @@ settings/development.py
 .idea/
 tree_result.html
 static/bulma/sass
+Articles.obj
+save_to_db.py
+static/*
+schoolsite/static/*
+!static/js/
+!static/css/
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
