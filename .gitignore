@@ -9,6 +9,7 @@ static/*
 schoolsite/static/*
 !static/js/
 !static/css/
+/media/*
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
