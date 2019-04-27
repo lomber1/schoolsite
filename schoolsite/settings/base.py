@@ -23,7 +23,6 @@ SECRET_KEY = ""
 DEBUG = True
 ALLOWED_HOSTS = []
 
-
 # Application definition
 PREREQUSITE_APPS = [
     "django.contrib.admin",
@@ -35,6 +34,8 @@ PREREQUSITE_APPS = [
     "django_extensions",
     "pwa",
     "bulma",
+    "ckeditor",
+    "ckeditor_uploader",
 ]
 
 PROJECT_APPS = ["articles", "categories", "accounts", "adminpanel"]
@@ -74,7 +75,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = "schoolsite.wsgi.application"
 
-
 # Database
 # https://docs.djangoproject.com/en/2.2/ref/settings/#databases
 
@@ -84,7 +84,6 @@ DATABASES = {
         "NAME": os.path.join(BASE_DIR, "../db.sqlite3"),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/2.2/ref/settings/#auth-password-validators
@@ -106,14 +105,10 @@ LOGOUT_REDIRECT_URL = "/"
 
 LANGUAGE_CODE = "pl"
 
-TIME_ZONE = "UTC"
-
+TIME_ZONE = "Europe/Warsaw"
 USE_I18N = True
-
 USE_L10N = True
-
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.2/howto/static-files/
@@ -135,3 +130,10 @@ PWA_APP_DISPLAY = "standalone"
 PWA_APP_SCOPE = "/"
 PWA_APP_ORIENTATION = "any"
 PWA_APP_START_URL = "/"
+
+# ckeditor
+# CKEDITOR_CONFIGS = {
+#     'awesome_ckeditor': {
+#         'toolbar': 'Basic',
+#     },
+# }

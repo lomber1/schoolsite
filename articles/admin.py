@@ -9,7 +9,6 @@ class ArticleAdmin(admin.ModelAdmin):
     list_display = (
         "title",
         "body",
-        "author",
         "publish_date",
         "category",
         "is_visible",
