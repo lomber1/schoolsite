@@ -31,7 +31,7 @@
         </div>
 
     </section>
-    
+
     <br>
 
     <!-- Articles list -->
@@ -41,18 +41,19 @@
             {% for article in object_list %}
 
             <article class="media school-article-admin">
-                
+
                 <figure class="media-left">
                     <p class="image is-96x96">
-                        <img
-                            src="{{ article.thumbnail.url }}">
+                        <img src="{{ article.thumbnail.url }}">
                     </p>
                 </figure>
 
                 <div class="media-content">
                     <div class="content">
                         <p>
-                            <strong> {{ article.title }} </strong> <small> {{ article.publish_date }} </small>
+                            <a href="{% url 'articles:article_details' slug=article.slug %}">
+                                <strong> {{ article.title }} </strong>
+                            </a><small> {{ article.publish_date }} </small>
                             <br>
                             <span style="word-break:break-all;">
                                 {{ article.get_short_body }}...
@@ -65,9 +66,9 @@
                     <!-- Is visible icon -->
                     <span class="icon has-text-link is-medium">
                         {% if article.is_visible %}
-                            <i class="fas fa-eye fa-lg"></i>
+                        <i class="fas fa-eye fa-lg"></i>
                         {% else %}
-                            <i class="fas fa-eye-slash fa-lg"></i>
+                        <i class="fas fa-eye-slash fa-lg"></i>
                         {% endif %}
                     </span>
 
@@ -84,15 +85,16 @@
                             <i class="fas fa-trash fa-lg"></i>
                         </span>
                     </a>
-                    
+
                 </div>
 
             </article>
-            
-            {% endfor %}            
+
+            {% endfor %}
         </article>
 
     </section>
 </div>
-
+<!-- Section for links -->
+{% include "includes/pagination_thing.html" %}
 {% endblock %}

@@ -11,7 +11,7 @@ class IndexView(LoginRequiredMixin, TemplateView):
 class ArticlesTabView(LoginRequiredMixin, ListView):
     template_name = "adminpanel/articles.html"
     model = Article
-    paginate_by = 100
+    paginate_by = 10
     ordering = ["-publish_date"]
     raise_exception = True
 

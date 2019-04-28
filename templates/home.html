@@ -4,81 +4,54 @@
 {% block content %}
 
 <section id="list-of-all-articles">
-  <article class="school-articles">
-    {% for article in object_list %}
+    <article class="school-articles">
+        {% for article in object_list %}
 
-      <article class="media school-article">
-        <!-- Thumbnail -->
-        <figure class="media-left">
-          <p class="image is-96x96">
-            <img src="{{ article.thumbnail.url }}">
-            <!--<img src="https://bulma.io/images/placeholders/128x128.png">-->
-          </p>
-        </figure>
+        <article class="media school-article">
+            <!-- Thumbnail -->
+            <figure class="media-left">
+                <p class="image is-96x96">
+                    <img src="{{ article.thumbnail.url }}">
+                    <!--<img src="https://bulma.io/images/placeholders/128x128.png">-->
+                </p>
+            </figure>
 
-        <!-- Body -->
-        <div class="media-content">
-          <div class="content">
-            <p>
+            <!-- Body -->
+            <div class="media-content">
+                <div class="content">
+                    <p>
 
-              <strong>
-                <a href="{% url 'articles:article_details' slug=article.slug %}" 
-                    class="has-text-success">
-                  {{ article.title }}
-                </a>
-              </strong>
-              <small>
-                | {{ article.publish_date }} | {{ article.category }}
-              </small>
+                        <strong>
+                            <a href="{% url 'articles:article_details' slug=article.slug %}" class="has-text-success">
+                                {{ article.title }}
+                            </a>
+                        </strong>
+                        <small>
+                            | {{ article.publish_date }} | {{ article.category }}
+                        </small>
 
-              <br>
-              
-              <span class="break-word">
-                {{ article.get_short_body }}...
-              </span>
+                        <br>
 
-              <small>
-                <strong>
-                  <a href="{% url 'articles:article_details' slug=article.slug %}"
-                      class="has-text-success">
-                    CZYTAJ DALEJ
-                  </a>
-                </strong>
-              </small>
-            </p>
-          </div>
-        </div>
-      </article>
+                        <span class="break-word">
+                            {{ article.get_short_body }}...
+                        </span>
 
-    {% endfor %}
-  </article>
+                        <small>
+                            <strong>
+                                <a href="{% url 'articles:article_details' slug=article.slug %}" class="has-text-success">
+                                    CZYTAJ DALEJ
+                                </a>
+                            </strong>
+                        </small>
+                    </p>
+                </div>
+            </div>
+        </article>
+
+        {% endfor %}
+    </article>
 </section>
 <br>
 <!-- Section for links -->
-{% if is_paginated %}
-  <section>
-    <div style="overflow-x: auto;">
-      <ul class="pagination">
-        {% if page_obj.has_previous %}
-          <li><a href="?page={{ page_obj.previous_page_number }}" class="success">&laquo;</a></li>
-        {% else %}
-          <li class="disabled"><span>&laquo;</span></li>
-        {% endif %}
-        {% for i in paginator.page_range %}
-          {% if page_obj.number == i %}
-            <li class="active"><span>{{ i }} <span class="sr-only">(obecna strona)</span></span></li>
-          {% else %}
-            <li><a href="?page={{ i }}" class="has-text-success">{{ i }}</a></li>
-          {% endif %}
-        {% endfor %}
-        {% if page_obj.has_next %}
-          <li><a href="?page={{ page_obj.next_page_number }}" class="success">&raquo;</a></li>
-        {% else %}
-          <li class="disabled"><span>&raquo;</span></li>
-        {% endif %}
-      </ul>
-    </div>
-  </section>
-{% endif %}
-
+{% include "includes/pagination_thing.html" %}
 {% endblock content %}

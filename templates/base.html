@@ -5,41 +5,42 @@
 <html lang="en">
 
 <head>
-  {% progressive_web_app_meta %}
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  {% block meta_description %}{% endblock %}
-  <link rel="stylesheet" href="{% static 'bulma/css/style.min.css' %}">
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
-  <link rel="stylesheet" href="{% static 'css/website.css' %}">
-  <title>{% block title %}Zespół Kształcenia i Wychowania im. Jana Pawła II w Starej Kiszewie{% endblock %}</title>
+    {% progressive_web_app_meta %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block meta_description %}{% endblock %}
+    <link rel="stylesheet" href="{% static 'bulma/css/style.min.css' %}">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/website.css' %}">
+    <title>{% block title %}Zespół Kształcenia i Wychowania im. Jana Pawła II w Starej Kiszewie{% endblock %}</title>
 </head>
 
 <body class="has-navbar-fixed-top">
-  {% include "includes/header.html" %}
+    {% include "includes/header.html" %}
 
-  {% if code %}
+    {% if code %}
     {% block error %}{% endblock %}
-  {% else %}
+    {% else %}
     <section class="section">
-      <div class="container">
-        <div class="columns">
-            <div class="column is-2">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-2">
 
-            </div>
-            <div class="column is-8 is-offset-0">
-              {% block content %} {% endblock %}
+                </div>
+                <div class="column is-8 is-offset-0">
+                    {% block content %} {% endblock %}
+                </div>
             </div>
         </div>
-      </div>
     </section>
-  {% endif %}
+    {% endif %}
 
-  {% include "includes/footer.html" %}
+    {% include "includes/footer.html" %}
 
-  <script src="{% static 'jquery/js/jquery-3.4.0.min.js' %}"></script>
-  <script src="{% static 'js/navbar.js' %}"></script>
+    <script src="{% static 'jquery/js/jquery-3.4.0.min.js' %}"></script>
+    <script src="{% static 'js/navbar.js' %}"></script>
 </body>
 
 </html>
