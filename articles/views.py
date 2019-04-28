@@ -1,3 +1,4 @@
+import bleach
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.db.models import F
 from django.urls import reverse_lazy
@@ -29,6 +30,29 @@ class ArticleCreate(LoginRequiredMixin, CreateView):
     fields = "__all__"
     success_url = reverse_lazy("adminpanel:articles_tab")
     raise_exception = True
+
+    def form_valid(self, form):
+        bleach.sanitizer.ALLOWED_TAGS.append("p")
+        bleach.sanitizer.ALLOWED_TAGS.append("u")
+        bleach.sanitizer.ALLOWED_TAGS.append("td")
+        bleach.sanitizer.ALLOWED_TAGS.append("tr")
+        bleach.sanitizer.ALLOWED_TAGS.append("hr")
+        bleach.sanitizer.ALLOWED_TAGS.append("img")
+        bleach.sanitizer.ALLOWED_TAGS.append("span")
+        bleach.sanitizer.ALLOWED_TAGS.append("h1")
+        bleach.sanitizer.ALLOWED_TAGS.append("h2")
+        bleach.sanitizer.ALLOWED_TAGS.append("h3")
+        bleach.sanitizer.ALLOWED_TAGS.append("h4")
+        bleach.sanitizer.ALLOWED_TAGS.append("h5")
+        bleach.sanitizer.ALLOWED_TAGS.append("h6")
+        bleach.sanitizer.ALLOWED_TAGS.append("kbd")
+        bleach.sanitizer.ALLOWED_TAGS.append("cite")
+        bleach.sanitizer.ALLOWED_TAGS.append("s")
+        bleach.sanitizer.ALLOWED_TAGS.append("table")
+        bleach.sanitizer.ALLOWED_TAGS.append("tbody")
+        form.instance.body = bleach.clean(form.instance.body)
+
+        return super().form_valid(form)
 
 
 class ArticleUpdate(LoginRequiredMixin, UpdateView):
