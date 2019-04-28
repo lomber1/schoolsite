@@ -4,52 +4,68 @@
 {% block content %}
 
 <section id="list-of-all-articles">
-    <article class="school-articles">
-        {% for article in object_list %}
 
-        <article class="media school-article">
-            <!-- Thumbnail -->
-            <figure class="media-left">
-                <p class="image is-96x96">
-                    <img src="{{ article.thumbnail.url }}">
-                    <!--<img src="https://bulma.io/images/placeholders/128x128.png">-->
-                </p>
-            </figure>
+  {% if object_list %}
+  <article class="school-articles">
+    {% for article in object_list %}
 
-            <!-- Body -->
-            <div class="media-content">
-                <div class="content">
-                    <p>
+    <article class="media school-article">
+      <!-- Thumbnail -->
+      <figure class="media-left">
+        <p class="image is-96x96">
+          <img src="{{ article.thumbnail.url }}">
+          <!--<img src="https://bulma.io/images/placeholders/128x128.png">-->
+        </p>
+      </figure>
 
-                        <strong>
-                            <a href="{% url 'articles:article_details' slug=article.slug %}" class="has-text-success">
-                                {{ article.title }}
-                            </a>
-                        </strong>
-                        <small>
-                            | {{ article.publish_date }} | {{ article.category }}
-                        </small>
+      <!-- Body -->
+      <div class="media-content">
+        <div class="content">
+          <p>
 
-                        <br>
+            <strong>
+              <a href="{% url 'articles:article_details' slug=article.slug %}" class="has-text-success">
+                {{ article.title }}
+              </a>
+            </strong>
+            <small>
+              | {{ article.publish_date }} | <a href="?kategoria={{ article.category.title }}" class="has-text-success">{{ article.category.title }}</a>
+            </small>
 
-                        <span class="break-word">
-                            {{ article.get_short_body }}...
-                        </span>
+            <br>
 
-                        <small>
-                            <strong>
-                                <a href="{% url 'articles:article_details' slug=article.slug %}" class="has-text-success">
-                                    CZYTAJ DALEJ
-                                </a>
-                            </strong>
-                        </small>
-                    </p>
-                </div>
-            </div>
-        </article>
+            <span class="break-word">
+              {{ article.get_short_body }}...
+            </span>
 
-        {% endfor %}
+            <small>
+              <strong>
+                <a href="{% url 'articles:article_details' slug=article.slug %}" class="has-text-success">
+                  CZYTAJ DALEJ
+                </a>
+              </strong>
+            </small>
+          </p>
+        </div>
+      </div>
     </article>
+    {% endfor %}
+  </article>
+  {% else %}
+  <section class="hero">
+    <div class="hero-body">
+      <div class="container">
+        <h1 class="title">
+          Nie znaleziono żadnych wiadomości.
+        </h1>
+        <h2 class="subtitle">
+          <a href="{% url 'homepage' %}" class="has-text-success">Powrót na stronę główną.</a>
+        </h2>
+      </div>
+    </div>
+  </section>
+  {% endif %}
+
 </section>
 <br>
 <!-- Section for links -->
