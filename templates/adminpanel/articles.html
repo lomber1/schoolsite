@@ -31,7 +31,7 @@
         </div>
 
     </section>
-    
+
     <br>
 
     <!-- Articles list -->
@@ -41,58 +41,63 @@
             {% for article in object_list %}
 
             <article class="media school-article-admin">
-                
+
                 <figure class="media-left">
                     <p class="image is-96x96">
-                        <img
-                            src="{{ article.thumbnail.url }}">
+                        <img src="{{ article.thumbnail.url }}">
                     </p>
                 </figure>
 
                 <div class="media-content">
                     <div class="content">
                         <p>
-                            <strong> {{ article.title }} </strong> <small> {{ article.publish_date }} </small>
+                            <a href="{% url 'articles:article_details' slug=article.slug %}">
+                                <!-- Is visible icon -->
+                                <small class="is-size-7">
+                                    <span class="icon has-text-link is-medium">
+                                        {% if article.is_visible %}
+                                        <i class="fas fa-eye fa-lg"></i>
+                                        {% else %}
+                                        <i class="fas fa-eye-slash fa-lg"></i>
+                                        {% endif %}
+                                    </span>
+                                </small>
+
+                                <strong> {{ article.title }} </strong>
+                            </a><small> {{ article.publish_date }} </small>
                             <br>
                             <span style="word-break:break-all;">
                                 {{ article.get_short_body }}...
                             </span>
+                            <br>
+                            <small>
+                                <!-- Edit button -->
+                                <a href="{% url 'articles:article_update' slug=article.slug %}">
+                                    <span class="icon is-medium">
+                                        <i class="fas fa-edit fa-lg"></i>
+                                    </span>
+                                    <span class="is-link"><strong>Edytuj</strong></span>
+                                </a>
+
+                                <!-- Delete button -->
+                                <a href="{% url 'articles:article_delete' slug=article.slug %}">
+                                    <span class="icon is-medium has-text-danger">
+                                        <i class="fas fa-trash fa-lg"></i>
+                                    </span>
+                                    <span class="has-text-danger"><strong>Usuń</strong></span>
+                                </a>
+                            </small>
                         </p>
                     </div>
                 </div>
 
-                <div class="media-right">
-                    <!-- Is visible icon -->
-                    <span class="icon has-text-link is-medium">
-                        {% if article.is_visible %}
-                            <i class="fas fa-eye fa-lg"></i>
-                        {% else %}
-                            <i class="fas fa-eye-slash fa-lg"></i>
-                        {% endif %}
-                    </span>
-
-                    <!-- Edit button -->
-                    <a href="{% url 'articles:article_update' slug=article.slug %}">
-                        <span class="icon is-medium">
-                            <i class="fas fa-edit fa-lg"></i>
-                        </span>
-                    </a>
-
-                    <!-- Delete button -->
-                    <a href="{% url 'articles:article_delete' slug=article.slug %}">
-                        <span class="icon is-medium has-text-danger">
-                            <i class="fas fa-trash fa-lg"></i>
-                        </span>
-                    </a>
-                    
-                </div>
-
             </article>
-            
-            {% endfor %}            
+
+            {% endfor %}
         </article>
 
     </section>
 </div>
-
+<!-- Section for links -->
+{% include "includes/pagination_thing.html" %}
 {% endblock %}

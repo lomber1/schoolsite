@@ -1,0 +1,55 @@
+{% if is_paginated %}
+<section>
+    <nav class="pagination is-centered" role="navigation" aria-label="pagination">
+
+        {% if page_obj.has_previous %}
+        <a href="?page={{ page_obj.previous_page_number }}" class="pagination-previous"><i class="fas fa-angle-left"></i></a>
+        {% endif %}
+
+        {% if page_obj.has_next %}
+        <a href="?page={{ page_obj.next_page_number }}" class="pagination-next"><i class="fas fa-angle-right"></i></a>
+        {% endif %}
+
+        <ul class="pagination-list">
+
+            <li>
+                <a href="?page=1" class="pagination-link {% if not page_obj.has_previous %} is-current {% endif %}">
+                    1
+                </a>
+            </li>
+
+            {% if paginator.num_pages > 3 %}
+            <li>
+                <span class="pagination-ellipsis">&hellip;</span>
+            </li>
+            {% endif %}
+
+            {% for i in paginator.page_range %}
+
+            {% if i > 1 and i < paginator.num_pages %}
+            {% if i > page_obj.number|add:'-2' and i < page_obj.number|add:'2' %}
+            <li>
+                <a href="?page={{ i }}" class="pagination-link {% if i == page_obj.number %} is-current {% endif %}">
+                    {{ i }}
+                </a>
+            </li>
+            {% endif %}
+            {% endif %}
+
+            {% endfor %}
+
+            {% if paginator.num_pages > 3 %}
+            <li>
+                <span class="pagination-ellipsis">&hellip;</span>
+            </li>
+            {% endif %}
+
+            <li>
+                <a href="?page={{ paginator.num_pages }}" class="pagination-link {% if not page_obj.has_next %} is-current {% endif %}">
+                    {{ paginator.num_pages }}
+                </a>
+            </li>
+        </ul>
+    </nav>
+</section>
+{% endif %}
