@@ -11,10 +11,17 @@ class HomeView(ListView):
     template_name = "home.html"
     model = Article
     paginate_by = 10
-    ordering = ["-publish_date"]
+    # ordering = ["-publish_date"]
 
-    # def get_queryset(self):
-    #     return self.model.objects.filter(is_visible=True).order_by("-publish_date")
+    def get_queryset(self):
+        category = self.request.GET.get("kategoria")
+
+        if category is not None:
+            return self.model.objects.filter(is_visible=True
+                                    ).filter(category__title=category).order_by("-publish_date")
+            # print(category)
+
+        return self.model.objects.filter(is_visible=True).order_by("-publish_date")
 
 
 @method_decorator(gzip_page, name="dispatch")
