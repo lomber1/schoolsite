@@ -21,20 +21,20 @@
     {% include "includes/header.html" %}
 
     {% if code %}
-        {% block error %}{% endblock %}
+    {% block error %}{% endblock %}
     {% else %}
-        <section class="section">
-            <div class="container">
-                <div class="columns">
-                    <div class="column is-2">
+    <section class="section">
+        <div class="container">
+            <div class="columns">
+                <div class="column is-2">
 
-                    </div>
-                    <div class="column is-8 is-offset-0">
-                        {% block content %} {% endblock %}
-                    </div>
+                </div>
+                <div class="column is-8 is-offset-0">
+                    {% block content %} {% endblock %}
                 </div>
             </div>
-        </section>
+        </div>
+    </section>
     {% endif %}
 
     {% include "includes/footer.html" %}
