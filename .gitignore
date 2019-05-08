@@ -1,8 +1,9 @@
-settings/development.py
+schoolsite/settings/development.py
 .vscode/
 .idea/
 tree_result.html
 static/bulma/sass
+<<<<<<< HEAD
 Articles.obj
 save_to_db.py
 static/*
@@ -10,6 +11,11 @@ schoolsite/static/*
 !static/js/
 !static/css/
 /media/*
+=======
+schoolsite/settings/production.py
+Articles.obj
+save_to_db.py
+>>>>>>> settings-for-gcloud
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
