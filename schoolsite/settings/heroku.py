@@ -1,11 +1,15 @@
 from .base import *
 import django_heroku
+import dj_database_url
 
 
 DEBUG = False
 django_heroku.settings(locals())
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
+DATABASES = {}
+DATABASES['default'] = dj_database_url.config(conn_max_age=600)
 
 MIDDLEWARE = [
     "whitenoise.middleware.WhiteNoiseMiddleware",
