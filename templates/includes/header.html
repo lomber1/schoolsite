@@ -17,11 +17,18 @@
       </a>
 
       <div class="navbar-item has-dropdown is-hoverable">
+        
+
+        
         <a class="navbar-link">
           Aktualności
         </a>
-
+        
         <div class="navbar-dropdown">
+          {% for category in category_list %}
+            <a href="#" class="navbar-item">{{ category.title }}</a>
+          {% endfor %}
+          <!--
           <a class="navbar-item" href="#">Biblioteka</a>
           <a class="navbar-item" href="#">Dowozy i odwozy</a>
           <a class="navbar-item" href="#">Harcerstwo</a>
@@ -32,6 +39,7 @@
           <a class="navbar-item" href="#">Sukcesy uczniów</a>
           <a class="navbar-item" href="#">Szkolne koło "Caritas"</a>
           <a class="navbar-item" href="#">Komunikaty MEN</a>
+        -->
         </div>
       </div>
 
