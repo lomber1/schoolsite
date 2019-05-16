@@ -21,12 +21,12 @@
 
         
         <a class="navbar-link">
-          Aktualności
+          Wiadomości
         </a>
         
         <div class="navbar-dropdown">
           {% for category in category_list %}
-            <a href="#" class="navbar-item">{{ category.title }}</a>
+            <a href="?kategoria={{ category.title }}" class="navbar-item">{{ category.title }}</a>
           {% endfor %}
           <!--
           <a class="navbar-item" href="#">Biblioteka</a>
@@ -42,14 +42,6 @@
         -->
         </div>
       </div>
-
-      <a href="{% url 'lesson_table' %}" class="navbar-item">
-        Plan lekcji
-      </a>
-
-      <a href="" class="navbar-item">
-        Kontakt
-      </a>
     </div>
   </div>
 </nav>

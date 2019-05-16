@@ -2,6 +2,7 @@ from django.urls import path
 
 from .views import IndexView, ArticlesTabView, LogsTabView, CategoriesTabView
 
+
 app_name = "adminpanel"
 
 urlpatterns = [

@@ -1,5 +1,5 @@
 <aside class="sidebar menu is-hidden-mobile">
-    {% url 'adminpanel:overview_tab' as overview_tab %}
+    <!--{% url 'adminpanel:overview_tab' as overview_tab %}-->
     {% url 'adminpanel:articles_tab' as articles_tab %}
     {% url 'adminpanel:categories_tab' as categories_tab %}
     {% url 'adminpanel:logs_tab' as logs_tab %}
@@ -10,8 +10,8 @@
     </p>
 
     <ul class="menu-list">
-        <li><a href="{{ overview_tab }}" {% if request.path == overview_tab %} class="tab-button is-active" {% endif %}
-                id="overview-button">Przegląd</a></li>
+        <!--<li><a href="{{ overview_tab }}" {% if request.path == overview_tab %} class="tab-button is-active" {% endif %}
+                id="overview-button">Przegląd</a></li>-->
         <li>
             <a href="{{ articles_tab }}" {% if request.path == articles_tab %} class="tab-button is-active" {% endif %}
                 id="articles-button">
@@ -22,10 +22,12 @@
                         {% endif %}>Kategorie</a></li>
             </ul>
         </li>
+        <!--
         <li><a href="{{ logs_tab }}" {% if request.path == logs_tab %} class="tab-button is-active" {% endif %}
                 id="logs-button">Raport</a></li>
         <li><a href="{{ settings_tab }}" {% if request.path == settings_tab %} class="tab-button is-active" {% endif %}
                 id="settins-button">Ustawienia</a></li>
+        -->
     </ul>
 
 

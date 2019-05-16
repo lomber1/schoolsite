@@ -69,7 +69,10 @@ TEMPLATES = [
                 "django.contrib.messages.context_processors.messages",
                 "django.template.context_processors.static",
                 "schoolsite.context_processors.get_categories",
-            ]
+            ],
+            "libraries": {
+                "paginator_tags": "schoolsite.templatetags.paginator_tags",
+            }
         },
     }
 ]

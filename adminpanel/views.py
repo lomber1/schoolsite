@@ -4,8 +4,8 @@ from django.views.generic import *
 from articles.models import Article, Category
 
 
-class IndexView(LoginRequiredMixin, TemplateView):
-    template_name = "adminpanel/index.html"
+class IndexView(LoginRequiredMixin, RedirectView):
+    url = "/panel/wiadomosci/"
 
 
 class ArticlesTabView(LoginRequiredMixin, ListView):
