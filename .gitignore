@@ -1,4 +1,4 @@
-settings/development.py
+schoolsite/settings/development.py
 .vscode/
 .idea/
 tree_result.html
